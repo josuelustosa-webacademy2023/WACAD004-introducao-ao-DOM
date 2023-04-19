@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS DOM - Atributos</title>
+
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <p data-classified="secret">A senha do cofre é 123987654.</p>
+    <p data-classified="unclassified">John Wick 4 é top!</p>
+    <p data-classified="secret">Saldo no banco é de R$ 0,0002.</p>
+
+    <script>
+        //Seleciona o elemento e armazena em uma variável
+        let el = document.getElementsByTagName('p');
+        
+        //Verifica se o atributo data-classified existe
+        if (el.hasAttribute('data-classified')) {
+            //Se existir remove o atributo do elemento nó
+            el.removeAttribute('data-classified' == 'secret');
+        } 
+    </script>
+</body>
+
+</html>
