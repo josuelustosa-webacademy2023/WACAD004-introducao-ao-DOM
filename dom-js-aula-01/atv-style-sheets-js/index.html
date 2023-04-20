@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS DOM parágrafo CSS</title>
+
+    <style>
+        #text {
+            font-size: 14pt;
+            font-family: "Comic Sans MS";
+            color: "white";
+        }
+    </style>    
+</head>
+
+<body>
+    <p id="text">Exercício Javascript Exercicios</p>
+    <div>
+        <button id="addstyle" onclick="addStyle()">Style</button>
+        <button id="clearstyle" onclick="removeStyle()">Remove</button>
+    </div>
+
+    <script>
+        function addStyle() {
+            let text = document.getElementById("text");
+
+            document.getElementById("addstyle")
+            textUser = prompt("Informe a cor");
+            text.style.setProperty("background-color", textUser);
+        }
+
+        function removeStyle() {
+            document.getElementById("clearstyle")
+            text.style.removeProperty("background-color");
+        }
+    </script>
+</body>
+
+</html>
