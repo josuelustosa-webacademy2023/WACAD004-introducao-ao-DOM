@@ -29,6 +29,7 @@
       img {
         transition: display 0.2ms ease;
         cursor: pointer;
+        margin: 10px 10px;
       }
 
       .js-hidden {
@@ -41,8 +42,19 @@
     </style>
   </head>
   <body>
-    <span class='btn'>Visualizar Imagem</span>
-    <img src="./mengao-87.jpg" alt="Flamengo Campeão Brasileiro de 87" class="js-hidden">
+    <h1>Exibindo e ocultando uma imagem com JavaScript</h1>
+
+    <span class="btn">Visualizar Imagem</span>
+    <span class="remove-btn">Remover Imagem</span>
+    <img
+      src="./mengao-87.jpg"
+      alt="Flamengo Campeão Brasileiro de 87"
+      width="450"
+      height="250"
+      class="js-hidden"
+      title="Clique na imagem para ocultar"
+    />
+
     <script src="./questao5.js"></script>
   </body>
 </html>
