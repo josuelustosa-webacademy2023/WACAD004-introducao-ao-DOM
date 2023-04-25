@@ -1,52 +1,73 @@
 // Item A
-let clickDivD = (document.getElementById("divD").style.cursor = "pointer"); // deixando a div clicável
+let clickDivD = (document.getElementById('divD').style.cursor = 'pointer'); // deixando a div clicável
 
 let divD = document
-  .getElementById("divD")
-  .addEventListener("click", function alterandoCorDeFundo(event) {
-    event.target.style.cursor = "pointer";
-
+  .getElementById('divD')
+  .addEventListener('click', function alterandoCorDeFundo(event) {
     let corAtual = event.target.style.backgroundColor;
 
-    if (corAtual === "rgb(192, 192, 192)") {
-      event.target.style.backgroundColor = "rgb(218, 165, 32)";
+    if (corAtual === 'rgb(192, 192, 192)') {
+      event.target.style.backgroundColor = 'rgb(218, 165, 32)';
     } else {
-      event.target.style.backgroundColor = "rgb(192, 192, 192)";
+      event.target.style.backgroundColor = 'rgb(192, 192, 192)';
     }
   });
 
 // Item B
-document.getElementById("divB").addEventListener("mouseover", function (event) {
+const LISTA_DE_CORES = {
+  azul: 'blue',
+  verde: '#00FF00',
+  amarelo: 'rgb(255, 215, 0)',
+  laranja: '#FF4500',
+  cinza: 'rgb(211, 211, 211)',
+};
+
+// transformando hex em rgb
+function hexToRgb(hex) {
+  hex = hex.replace('#', '');
+
+  let r = parseInt(hex.substring(0, 2), 16);
+  let g = parseInt(hex.substring(2, 4), 16);
+  let b = parseInt(hex.substring(4, 6), 16);
+
+  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
+
+document.getElementById('divC').addEventListener('mouseover', function (event) {
   let corAtual = event.target.style.backgroundColor;
 
+  let alterarCor;
+
   switch (corAtual) {
-    case "blue":
-      event.target.style.backgroundColor = "#00FF00";
+    case '':
+      alterarCor = LISTA_DE_CORES.azul;
       break;
-    case "#00FF00":
-      event.target.style.backgroundColor = "#FF4500";
+    case LISTA_DE_CORES.azul:
+      alterarCor = LISTA_DE_CORES.verde;
       break;
-    case "#FF4500":
-      event.target.style.backgroundColor = "rgb(255, 215, 0)";
+    case hexToRgb(LISTA_DE_CORES.verde):
+      alterarCor = LISTA_DE_CORES.laranja;
       break;
-    case "rgb(255, 215, 0)":
-      event.target.style.backgroundColor = "rgb(211, 211, 211)";
+    case hexToRgb(LISTA_DE_CORES.laranja):
+      alterarCor = LISTA_DE_CORES.amarelo;
       break;
-    case "rgb(211, 211, 211)":
-      event.target.style.backgroundColor = "blue";
+    case LISTA_DE_CORES.amarelo:
+      alterarCor = LISTA_DE_CORES.cinza;
       break;
     default:
-      event.target.style.backgroundColor = "blue";
+      alterarCor = LISTA_DE_CORES.azul;
   }
+  
+  event.target.style.backgroundColor = alterarCor;
 });
 
 // Item C
-let divA = document.getElementById("divA");
+let divB = document.getElementById('divB');
 
-divA.addEventListener("mouseenter", function () {
-  divA.style.backgroundColor = "red";
+divB.addEventListener('mouseenter', function () {
+  divB.style.backgroundColor = 'red';
 });
 
-divA.addEventListener("mouseleave", function () {
-  divA.style.backgroundColor = "green";
+divB.addEventListener('mouseleave', function () {
+  divB.style.backgroundColor = 'green';
 });
