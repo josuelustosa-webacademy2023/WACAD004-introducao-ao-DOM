@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="keywords" content="JavaScript DOM, DOM, container" />
+    <meta
+      name="description"
+      content="Uma página web exibe e esconde uma imagem com JavaScript"
+    />
+    <meta name="author" content="Josué Lustosa" />
+
+    <title>Exibindo e ocultando uma imagem com JavaScript</title>
+
+    <style>
+      .btn,
+      .remove-btn {
+        text-transform: capitalize;
+        width: 100px;
+        height: 10px;
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      img {
+        transition: display 0.2ms ease;
+        cursor: pointer;
+        margin: 10px 10px;
+      }
+
+      .js-hidden {
+        display: none;
+      }
+
+      .js-show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exibindo e ocultando uma imagem com JavaScript</h1>
+
+    <span class="btn">Visualizar Imagem</span>
+    <span class="remove-btn">Remover Imagem</span>
+    <img
+      src="./mengao-87.jpg"
+      alt="Flamengo Campeão Brasileiro de 87"
+      width="450"
+      height="250"
+      class="js-hidden"
+      title="Clique na imagem para ocultar"
+    />
+
+    <script src="./questao5.js"></script>
+  </body>
+</html>

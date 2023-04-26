@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="keywords"
+      content="JavaScript DOM, DOM, blur event, regex números"
+    />
+    <meta
+      name="description"
+      content="Uma página web valida campos de formulário com eventos do JavaScript"
+    />
+    <meta name="author" content="Josué Lustosa" />
+
+    <title>Validação de Formulário com JavaScript</title>
+
+    <style>
+      .body-data {
+        border: #3cb371 2px solid;
+        background-color: #03a9f400;
+        text-align: left;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        height: auto;
+        width: auto;
+      }
+
+      .resultText {
+        margin: 0 0 3px 0;
+        padding: 0px;
+        display: block;
+        font-weight: bold;
+      }
+
+      .heading {
+        font-weight: bold;
+        border-bottom: 2px solid #708090;
+        font-size: 15px;
+        width: 98%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Validação de Formulário com JavaScript</h1> -->
+
+    <div class="body-data">
+      <div class="heading">
+        <h2>Evento com 'blur'</h2>
+        <span>Click no input para disparar o Evento </span>
+      </div>
+
+      <div class="resultText">
+        <br />
+        <p id="msgKeydown"></p>
+        <p>Campo de Validação</p>
+        <textarea id="myText" rows="4" cols="50"></textarea>
+        <p id="result"></p>
+      </div>
+    </div>
+
+    <script src="./questao3.js"></script>
+  </body>
+</html>
