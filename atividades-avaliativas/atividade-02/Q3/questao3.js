@@ -1,22 +1,26 @@
-let caixaDeTexto = document.getElementById('myText');
-caixaDeTexto.addEventListener('blur', checkUserName);
+let caixaDeTexto = document.getElementById("myText");
 
-function checkUserName() {
-  const regexValidarTexto = /^[a-zA-Z]+$/g;
-  const regexSeTemNumero = /^\d+$/;
-  let msgValidacao = document.getElementById('result');
+caixaDeTexto.addEventListener("blur", function checkUserName() {
+  let msgValidacao = document.getElementById("result");
 
-  this.value.replace(/\s/g, '');
-  console.log('espacoo', regexSeTemNumero.test(this.value));
-
-  if (regexValidarTexto.test(this.value) && this.value) {
-    msgValidacao.textContent = 'success';
-    msgValidacao.style.cssText = 'background-color: green';
-  } else if (regexSeTemNumero.test(this.value)) {
-    msgValidacao.textContent = 'Input contém números”';
-    msgValidacao.style.cssText = 'background-color: red';
+  const valorDoInput = caixaDeTexto.value.trim();
+  if (valorDoInput === "") {
+    msgValidacao.textContent = "O campo está vazio.";
+    msgValidacao.style.cssText = "background-color: white";
+  } else if (/^[a-zA-Z]+$/.test(valorDoInput)) {
+    msgValidacao.textContent = "Input não contém números";
+    msgValidacao.style.cssText = "background-color: green";
+  } else if (/^[a-zA-Z0-9]+$/.test(valorDoInput)) {
+    msgValidacao.textContent = "Input contém números";
+    msgValidacao.style.cssText = "background-color: red";
   } else {
-    msgValidacao.textContent = 'Input vazio';
-    msgValidacao.style.cssText = 'background-color: yellow';
+    msgValidacao.textContent =
+      "Input contém outros caracteres além de letras e números.";
+    msgValidacao.style.cssText = "background-color: white";
   }
-}
+});
+
+caixaDeTexto.addEventListener("paste", function (event) {
+  event.preventDefault();
+  alert("Não é permitido colar algo aqui :(");
+});
